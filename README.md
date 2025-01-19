@@ -19,7 +19,7 @@ interfaces are included in the template source and tests.
 
 ### TASK(1): Implement take
 
-See src/itertools/Itertools.java
+See /itertools/Itertools.java
 
 Given an iterator and a number of elements, the `take` method returns an iterator
 over that number of elements taken from the iterator (or as many as it contains, if
@@ -34,7 +34,7 @@ required.
 
 ### TASK(2): Implement reversed
 
-See src/itertools/Itertools.java
+See /itertools/Itertools.java
 
 The `reversed` method returns a (double ended) iterator in the reverse order of the one given.
 Elements should be consumed from the given iterator only as needed.
@@ -42,7 +42,7 @@ Elements should be consumed from the given iterator only as needed.
 
 ### TASK(3): Implement filter
 
-See src/itertools/Itertools.java
+See /itertools/Itertools.java
 
 The `filter` method returns an iterator over only the elements of a given iterator that
 satisfy a given predicate. A predicate is a function used to determine if a particular
@@ -56,7 +56,7 @@ and will return `true` if and only if `x` satisfies the predicate.
 
 ### TASK(4): Implement map (single ended)
 
-See src/itertools/Itertools.java
+See /itertools/Itertools.java
 The `map` method returns an iterator over the elements of a given iterator with a
 given function applied to each element.
 That is, given a function `f` and an iterator over the elements `a, b, c, ...`, returns
