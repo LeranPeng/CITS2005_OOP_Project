@@ -76,6 +76,7 @@ See /itertools/Itertools.java
 
 Implement a double ended version of `map`.
 
+
 ### TASK(6): Implement zip
 
 See /itertools/Itertools.java
@@ -90,5 +91,19 @@ Java's `java.util.function.BiFunction` interface can be used by calling `f.apply
 and will return `f(x, y)`.
 The iterator ends when either input iterator ends.
 Elements should be consumed from the given iterators only as needed.
+Java's `java.util.function.BiFunction` interface can be used by calling `f.apply(x, y)`
+and will return `f(x, y)`.
+
+
+### TASK(7): Implement reduce
+See src/itertools/Itertools.java
+The `reduce` method returns the result of combining all the elements from the
+given iterator using the given function.
+Each element is combined with the current value using the given function.
+For example, given a function `f`, an initial value `x`, and an iterator over the
+elements `a, b, c`, returns `f(f(f(x, a), b), c)`.
+An example of a common reduction would be "sum", where we reduce an iterator
+over integers using the addition function to compute the sum of every element in
+the iterator.
 Java's `java.util.function.BiFunction` interface can be used by calling `f.apply(x, y)`
 and will return `f(x, y)`.
