@@ -96,7 +96,9 @@ and will return `f(x, y)`.
 
 
 ### TASK(7): Implement reduce
+
 See /itertools/Itertools.java
+
 The `reduce` method returns the result of combining all the elements from the
 given iterator using the given function.
 Each element is combined with the current value using the given function.
@@ -134,7 +136,9 @@ students retrieved from the studentapi.
 
 
 ### TASK(8): Implement StudentListIterator
+
 See /studentstats/StudentListIterator.java
+
 Implement a `DoubleEndedIterator` over the list of student records pulled from the
 student API.
 Since calls to `getPage()` may fail with a `QueryTimedOutException`, your
@@ -146,7 +150,9 @@ need to access only a prefix or suffix of the list, this would be extremely inef
 
 
 ### TASK(9): Implement unitNewestStudents
+
 See /studentstats/StudentStats.java
+
 Finally, we can use the `StudentListIterator` you have just implemented to write
 methods for computing some useful statistics. An example method to compute the
 average mark for a unit is already implemented for you. You are asked to
