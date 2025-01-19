@@ -158,3 +158,9 @@ order from oldest to newest student ID.
 You should implement this method using the tools you have written for the itertools
 package. You are permitted to write additional helper classes inside
 studentstats.java.
+
+## Tasks Completed
+With all of the above tasks completed all the tests should pass. Be careful when
+running the tests to ensure you are running the unmodified tests and you have
+actually recompiled all your code. Double check the submission instructions to
+make sure your submission is in the right format. Read the marking rubric carefully.
