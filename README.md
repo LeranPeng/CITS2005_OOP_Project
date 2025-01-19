@@ -57,6 +57,7 @@ and will return `true` if and only if `x` satisfies the predicate.
 ### TASK(4): Implement map (single ended)
 
 See /itertools/Itertools.java
+
 The `map` method returns an iterator over the elements of a given iterator with a
 given function applied to each element.
 That is, given a function `f` and an iterator over the elements `a, b, c, ...`, returns
@@ -68,3 +69,26 @@ Elements should be consumed from the given iterator only as needed.
 Java's `java.util.function.Function` interface can be used by calling `f.apply(x)` and
 will return `f(x)`.
 
+
+### TASK(5): Implement map (double ended)
+
+See /itertools/Itertools.java
+
+Implement a double ended version of `map`.
+
+### TASK(6): Implement zip
+
+See /itertools/Itertools.java
+
+The `zip` method returns an iterator over the results of combining each pair of
+elements from a pair of given iterators using a given function.
+That is, given a function `f` and iterators over the elements `a, b, c, ...` and `x, y, z,
+...` returns an iterator over `f(a, x), f(b, y), f(c, z), ...`.
+The iterator ends when either input iterator ends.
+Elements should be consumed from the given iterators only as needed.
+Java's `java.util.function.BiFunction` interface can be used by calling `f.apply(x, y)`
+and will return `f(x, y)`.
+The iterator ends when either input iterator ends.
+Elements should be consumed from the given iterators only as needed.
+Java's `java.util.function.BiFunction` interface can be used by calling `f.apply(x, y)`
+and will return `f(x, y)`.
