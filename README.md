@@ -96,7 +96,7 @@ and will return `f(x, y)`.
 
 
 ### TASK(7): Implement reduce
-See src/itertools/Itertools.java
+See /itertools/Itertools.java
 The `reduce` method returns the result of combining all the elements from the
 given iterator using the given function.
 Each element is combined with the current value using the given function.
@@ -107,3 +107,54 @@ over integers using the addition function to compute the sum of every element in
 the iterator.
 Java's `java.util.function.BiFunction` interface can be used by calling `f.apply(x, y)`
 and will return `f(x, y)`.
+
+
+## studentapi
+There is no reason to modify or add any code in this package.
+The studentapi package contains no tasks, but rather provides interfaces to a
+simulated API that you will be working with in the next section. You are advised to
+read the documentation comments for the interfaces in this package carefully.
+Notably, the student list API is paginated, returning not a single student at a time,
+but a short list of students. Pagination is a common technique in online APIs to
+reduce the number of API calls needed to retrieve the whole list, while not making
+the result of any one API call too large.
+Also, the `getPage()` API call is unreliable, and may sometimes time out before
+successfully completing, throwing a `QueryTimedOutException` to indicate as
+such.
+
+
+## studentstats
+The studentstats package represents a hypothetical software tool we are building
+to compute some basic statistics about student records, such as the average mark
+for a unit or the most recently enrolled students at the university who have
+completed a particular unit.
+We would like to be able to use tools from the itertools library to implement these
+methods elegantly. To that end we will need to write an iterator over the list of
+students retrieved from the studentapi.
+
+
+### TASK(8): Implement StudentListIterator
+See /studentstats/StudentListIterator.java
+Implement a `DoubleEndedIterator` over the list of student records pulled from the
+student API.
+Since calls to `getPage()` may fail with a `QueryTimedOutException`, your
+implementation should retry the connection in case it was just a momentary failure.
+A retry quota is given when constructing the iterator. If the API is still not reachable
+after exceeding the retry quota, you should raise an `ApiUnreachableException`.
+The iterator should not simply load the entire list and then iterate over it, as if we
+need to access only a prefix or suffix of the list, this would be extremely inefficient.
+
+
+### TASK(9): Implement unitNewestStudents
+See /studentstats/StudentStats.java
+Finally, we can use the `StudentListIterator` you have just implemented to write
+methods for computing some useful statistics. An example method to compute the
+average mark for a unit is already implemented for you. You are asked to
+implement the `unitNewestStudents` method.
+The `unitNewestStudents` method returns an iterator over the students who have
+taken a given unit, from newest to oldest. Student IDs are assigned in strictly
+increasing order as students enrol, and the student API lists student records in
+order from oldest to newest student ID.
+You should implement this method using the tools you have written for the itertools
+package. You are permitted to write additional helper classes inside
+studentstats.java.
